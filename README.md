@@ -107,7 +107,7 @@ Includes:
 All intermediate results can be saved for debugging or research.
 
 ---
-# 🔄 **Processing Pipeline (Flow Chart — Mermaid)**
+# 🔄 **Processing Pipeline**
 ```
 Left/Right Images
 Parameter (K1.csv, K2.csv, d1.csv, d2.csv, R.csv, T.csv, left_<case>.json)
