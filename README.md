@@ -3,7 +3,7 @@
 A complete stereo-vision processing pipeline for **millimeter-level rut depth estimation** using smartphone stereo images or any calibrated stereo camera pair.
 This project includes a fully modular architecture, robust rectification for **non-synchronized stereo cameras**, accurate 3D reconstruction, and multi-stage rut-shape extraction.
 
----
+
 
 # 🖼️ Example Input/Output
 
@@ -13,7 +13,7 @@ This project includes a fully modular architecture, robust rectification for **n
 | :-------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
 | ![Left](document/image_demo/left_001.jpg) | ![Right](document/image_demo/right_001.jpg) |
 
----
+
 
 ### **Rectified Output**
 
@@ -27,7 +27,6 @@ This project includes a fully modular architecture, robust rectification for **n
 
 ![Rut Profile](document/image_demo/rut_depth_analysis_001.png)
 
----
 
 # 🚀 Overview
 
@@ -72,8 +71,6 @@ This project implements an enhanced rectification pipeline:
 
 These corrections enable stable disparity estimation and accurate 3D reconstruction.
 
----
-
 ### ✔ **2. Auto-Tuned SGBM Disparity**
 
 Automatically determines `numDisparities` and SGBM parameters based on:
@@ -89,8 +86,6 @@ Provides:
 * sub-pixel refinement
 * noise suppression for road surfaces
 
----
-
 ### ✔ **3. Metric-Accurate 3D Reconstruction**
 
 Using the corrected Q matrix, the system produces:
@@ -98,8 +93,6 @@ Using the corrected Q matrix, the system produces:
 * millimeter-level world coordinates
 * ground-plane alignment (XYZ rotation)
 * consistent metrics regardless of input resolution
-
----
 
 ### ✔ **4. Multi-Stage Rut Profile Extraction**
 
@@ -114,29 +107,66 @@ Includes:
 All intermediate results can be saved for debugging or research.
 
 ---
-
-# 🧠 Processing Pipeline
-
+# 🔄 **Processing Pipeline**
 ```
 Left/Right Images
-        ↓
-[Rectification Engine]
-        ↓
-[SGBM Disparity Engine]
-        ↓
-[3D Reconstruction]
-        ↓
-[Rut Shape Processing]
-        ↓
-Final Rut Depth (mm)
+Parameter (K1.csv, K2.csv, d1.csv, d2.csv, R.csv, T.csv, left_<case>.json)
+        │
+        ▼
+[1] Rectification
+    • Undistortion + normalization
+    • Rotation to rectify epipolar lines
+    • Auto-resized bounding box
+    • Adjusted P1/P2 and regenerated Q
+        │
+        ▼
+[2] Disparity Estimation (SGBM)
+    • Horizontal matching on rectified pair
+    • Auto-calculated disparity range
+    • Sub-pixel refinement
+        │
+        ▼
+[3] 3D Reconstruction
+    • Reproject disparity → (X,Y,Z) using corrected Q
+    • Convert camera coords → road coords
+    • Produce metric-accurate depth/point cloud
+        │
+        ▼
+[4] Rut Profile Extraction
+    • Sample 3D points along seed-defined line
+    • Remove outliers & correct slope
+    • Normalize height & smooth profile
+    • Compute rut depth (mm)
+        │
+        ▼
+Final Output (Rut Depth, mm)
+
 ```
 
 ---
 
+# 📚 Additional Documentation (Theory & Details)
+
+If you want deeper explanation of algorithms and implementation:
+
+### **📘 Program Deep Dive**
+
+* `document/PROJECT_DEEP_DIVE.md`
+  Detailed system description, module hierarchy, and full algorithmic explanations.
+
+### **📘 Stereo Camera Theory**
+
+* `document/ステレオカメラを用いたわだちぼれ量の算出_第二章_2次元座標から3次元座標への変換.docx`
+* `document/ステレオカメラを用いたわだちぼれ量の算出_第三章_ステレオ画像の平行化処理.docx`
+
+These explain:
+
+* 2D → 3D coordinate transformation
+* Rectification geometry
+
+---
+
 # 📂 **Repository Structure**
-
-*(Extracted from structure.txt — faithfully reflected)*
-
 
 ```
 StereoVisionToolkit/
@@ -146,35 +176,29 @@ StereoVisionToolkit/
 │   ├── config.py                    # Configuration loader and validator
 │   ├── config_rut_shape.json        # Main rut shape configuration
 │   └── config_rut_shape1.json       # Alternative configuration
-
 ├── src_rut_shape/
 │   ├── rut_shape.py                 # High-level rut extraction pipeline
 │   ├── rectify_refactored.py        # Stage 1: Stereo rectification (improved)
 │   ├── disparity_refactored.py      # Stage 2: Disparity calculation (SGBM)
 │   ├── depth.py                     # Stage 3: 3D reconstruction
 │   ├── height_refactored.py         # Stage 4: Rut shape extraction
-
 │   ├── base/
 │   │   ├── file_manager.py          # File I/O operations
 │   │   └── processor.py             # Template for pipeline processors
-
 │   ├── rectification/
 │   │   ├── engine.py                # Core rectification engine
 │   │   ├── matrix_calculator.py     # P1/P2/Q matrix correction
 │   │   └── file_manager.py          # Rectification file I/O
-
 │   ├── disparity/
 │   │   ├── sgbm_engine.py           # SGBM computation engine
 │   │   ├── parameter_calculator.py  # Auto-parameter tuning
 │   │   └── disparity_processor.py   # Post-processing (sub-pixel, filtering)
-
 │   └── height/
 │       ├── processors.py            # Profile filtering, slope correction
 │       ├── rut_calculator.py        # Final rut depth estimation
 │       ├── image_loader.py          # Image and data loader
 │       ├── coordinate_processor.py  # Coordinate frame alignment (XYZ rotation)
 │       └── file_manager.py          # File operations for height stage
-
 ├── utils/
 │   ├── point_processor.py           # Geometric utilities
 │   ├── image_processing.py          # Image manipulation helpers
@@ -185,13 +209,47 @@ StereoVisionToolkit/
 │   ├── stereo_math.py               # Stereo geometry calculations
 │   ├── file_operations.py           # File I/O
 │   └── logger_config.py             # Logging configuration
-
 └── document/
     ├── README.md                    # User guide (this file)
     ├── PROJECT_DEEP_DIVE.md         # Technical deep dive
     └── TECHNOLOGY_TRANSFER.md       # Implementation documentation
 ```
 
+## 📦 Data Conventions
+
+### **Images**
+
+```
+data/<dataset>/<case_name>/set_*/<pair_name>/
+    left_<pair>.jpg
+    right_<pair>.jpg
+```
+
+### **Parameters**
+
+Stored under:
+
+```
+parameter/<dataset>/<case_name>
+```
+
+Required files:
+
+* `K1.csv`, `d1.csv`
+* `K2.csv`, `d2.csv`
+* `R.csv`, `T.csv`
+* `disparityToDepthMap.csv`
+* `left_<pair>.json`
+  → includes `rut_1`, `rut_2` seed endpoints in the original image
+
+Here is the input example:
+```json
+{
+  "case_name"         : "001",
+  "image_set_folder"  : "data/2024_1106/{case_name}",
+  "parameter_path"    : "parameter/2024_1106/{case_name}"
+}
+```
 ---
 
 # ▶ How to Run
@@ -199,6 +257,7 @@ StereoVisionToolkit/
 ```
 python main.py --config config/config_rut_shape.json
 ```
+All required parameters are defined in the JSON file.
 
 Inputs:
 
