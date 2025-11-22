@@ -162,9 +162,7 @@ If you want deeper explanation of algorithms and implementation:
 These explain:
 
 * 2D → 3D coordinate transformation
-* Stereo calibration
 * Rectification geometry
-* Disparity-depth relations
 
 ---
 
