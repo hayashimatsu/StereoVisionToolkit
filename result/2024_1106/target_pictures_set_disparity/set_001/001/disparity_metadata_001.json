@@ -1,0 +1,68 @@
+{
+  "disparity_info": {
+    "shape": [
+      2448,
+      4013
+    ],
+    "dtype": "float32",
+    "processing_version": "disparity_processor_v1.0"
+  },
+  "sgbm_parameters": {
+    "num_disparities": 496,
+    "min_disparity": 2,
+    "block_size": 7,
+    "use_fast_mode": true,
+    "focal_length_pixels": 2830.9003789999997,
+    "baseline_meters": 250.0,
+    "resize_scale": 1,
+    "depth_range": {
+      "min_depth": 1,
+      "max_depth": 10,
+      "target_depth": 5
+    }
+  },
+  "quality_metrics": {
+    "total_pixels": 9823824,
+    "valid_pixels": 9823824,
+    "validity_ratio": 1.0,
+    "coverage_percentage": 100.0,
+    "disparity_range": {
+      "min": 1.0,
+      "max": 497.0,
+      "mean": 78.11491394042969,
+      "std": 98.5638656616211
+    },
+    "dynamic_range": 496.0,
+    "quality_level": "excellent"
+  },
+  "pair_info": {
+    "set_name": "set_001",
+    "pair_name": "001",
+    "pair_folder": "c:\\Users\\jts891008\\Documents\\self\\core\\rut_analysis\\result\\$temp\\target_pictures_set_rectified\\set_001\\001",
+    "timestamp": "2025-11-21T10:57:53.805148",
+    "processing_type": "disparity"
+  },
+  "processing_version": "disparity_calculator_refactored_v1.0",
+  "camera_parameters": {
+    "focal_length_avg": 2831.0,
+    "baseline": 250.0,
+    "resize_scale": 1
+  },
+  "configuration": {
+    "target_depth": 5,
+    "min_depth": 1,
+    "max_depth": 10,
+    "need_show": false
+  },
+  "rut_analysis": {
+    "total_points": 1613,
+    "valid_disparity_points": 1613,
+    "validity_ratio": 1.0,
+    "disparity_range": {
+      "min": 96.625,
+      "max": 105.5625,
+      "mean": 99.15743180409176
+    },
+    "source_file": "c:\\Users\\jts891008\\Documents\\self\\core\\rut_analysis\\result\\$temp\\target_pictures_set_rectified\\set_001\\001\\rectified_interpolated_points_001.json"
+  }
+}

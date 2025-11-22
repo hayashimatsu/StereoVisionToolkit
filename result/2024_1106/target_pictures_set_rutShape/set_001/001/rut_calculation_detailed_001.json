@@ -1,0 +1,47 @@
+{
+  "depth_mm": 38.33506081347425,
+  "depth_m": 0.03833506081347425,
+  "min_point": {
+    "x": 0.7602977667493799,
+    "y": -37.72826479935247,
+    "index": 383
+  },
+  "peak1": {
+    "x": 0.11712158808933015,
+    "y": 0.6082531045011556,
+    "index": 59
+  },
+  "peak2": {
+    "x": 3.2,
+    "y": 0.6012689649752144,
+    "index": 1612
+  },
+  "baseline_start": {
+    "x": 0.11712158808933015,
+    "y": 0.6082531045011556
+  },
+  "baseline_end": {
+    "x": 3.2,
+    "y": 0.6012689649752144
+  },
+  "intersection_point": {
+    "x": 0.7602978535959491,
+    "y": 0.6067960140234004
+  },
+  "baseline_equation": {
+    "slope": -2.2654605835111666e-06,
+    "intercept": 0.6085184388424502
+  },
+  "perpendicular_equation": {
+    "slope": 441411.3435821211,
+    "intercept": -335604096.4715947
+  },
+  "intersection_between_peaks": true,
+  "calculation_method": "improved_perpendicular_distance",
+  "input_data_points": 1613,
+  "units": {
+    "input_x": "meters",
+    "input_y": "millimeters",
+    "output": "millimeters"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_comment_for_INPUT": "The input includes the photo set and the folder path for parameters, which need to be set in advance.",
+  "case_name"         : "001",
+  "image_set_folder"  : "data/2024_1106/{case_name}",
+  "parameter_path"    : "parameter/2024_1106(coord=1400)/{case_name}",
+
+  "_comment_for_OUTPUT": "The folder path for the output needs to be set in advance.",
+  "save_path_result"  : "2024_1106",
+  "save_path_temp"    : "$temp",
+  
+  "low_pass_filter_cutoff": 2,
+  "lane_width": 3.5,
+  "reference_rut_shape": "None",
+  "ref_L": 5,
+  "ref_R": 5,
+  
+  "need_showPicture": "False",
+
+  "_comment_for_counter_range": "The following are parameters used to adjust the contour map range.",
+  "max_depth": 10,
+  "min_depth": 1,
+  "target_depth": 5,
+  "counter_tick": 1000,
+  
+  "_comment_for_disparity": "The following are parameters used for parallax calculation (SGBM).",
+  "SGBM_MODE_FAST": "True",
+  "BLOCKSIZE": 3,
+  "MIN_DISPARITY": 2,
+  "NUM_DISPARITIES": 500,
+  "focus_range_x": 500,
+  "focus_range_y": 1250,
+  
+  "_comment_for_RutShape": "The following are parameters used for automatic rut extraction.",
+  "lane_marker_range_L": 70,
+  "lane_marker_range_R": 70,
+  
+  "_comment_for_filter": "The following are parameters used for post-processing rut data.",
+  "need_fix_extreme_value": "True",
+  "block_size_factor": 0.2,
+  "min_block_size": 25,
+
+  
+  "_comment_for_improved_rut_calc": "Parameters for improved rut depth calculation.",
+  "use_improved_rut_calculation": "True",
+  "rut_min_distance_ratio": 0.1,
+  "rut_fallback_to_local_peaks": "True",
+  
+  "_comment_for_rut_visualization": "Parameters for rut depth visualization.",
+  "create_rut_plot": "True",
+  "rut_plot_width": 12,
+  "rut_plot_height": 8,
+  "rut_plot_filename": "rut_depth_analysis_{pair_name}.png",
+  "show_rut_plot": "False",
+  "plot_dpi": 300,
+  "window_size": 100,
+  "xy_rotate_angle": 0,
+  "yz_rotate_angle": 0,
+  "xz_rotate_angle": 0,
+  
+  "_comment_for_rectification": "The following are parameters for rectification size control.",
+  "rectified_image_size": "auto",
+  "rectification_alpha": -1,
+  
+  "_comment_for_world_Coord": "The following are parameters for world coordinate calculation.",
+  "m1_cv2ReprojectImageTo3D": "False",
+  "m2_epipolarCorrection": "True",
+  
+  "_comment_for_resize": "The following are parameters for image resize optimization to handle large images and memory constraints.",
+  "resize_scale": 1
+}

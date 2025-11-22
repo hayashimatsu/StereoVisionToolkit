@@ -1,0 +1,11 @@
+{
+  "total_points": 1613,
+  "valid_disparity_points": 1613,
+  "validity_ratio": 1.0,
+  "disparity_range": {
+    "min": 96.625,
+    "max": 105.5625,
+    "mean": 99.15743180409176
+  },
+  "source_file": "c:\\Users\\jts891008\\Documents\\self\\core\\rut_analysis\\result\\$temp\\target_pictures_set_rectified\\set_001\\001\\rectified_interpolated_points_001.json"
+}

@@ -1,0 +1,168 @@
+{
+  "pair_name": "001",
+  "set_name": "set_001",
+  "processing_version": "rectifier_refactored_v1.0",
+  "rectification_info": {
+    "setup_complete": true,
+    "original_size": [
+      3840,
+      2160
+    ],
+    "rectified_size": [
+      4013,
+      2448
+    ],
+    "optimal_principal_offsets": [
+      -125.68171978339262,
+      -132.51382402936213
+    ],
+    "baseline": 253.9089952935006,
+    "focal_lengths": {
+      "fx": 2829.486508,
+      "fy": 2829.486508
+    },
+    "principal_points": {
+      "cx": 1332.4261961017519,
+      "cy": 1211.824050469792
+    },
+    "size_change_ratio": {
+      "width": 1.0450520833333334,
+      "height": 1.1333333333333333
+    }
+  },
+  "matrix_info": {
+    "matrix_version": "rectification_v1.0",
+    "original_size": [
+      3840,
+      2160
+    ],
+    "rectified_size": [
+      4013,
+      2448
+    ],
+    "resize_applied": false,
+    "resize_scale": null,
+    "projection_matrices": {
+      "P1": [
+        [
+          2829.486508,
+          0.0,
+          1332.4261961017519,
+          0.0
+        ],
+        [
+          0.0,
+          2829.486508,
+          1211.824050469792,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "P2": [
+        [
+          2829.486508,
+          0.0,
+          1332.4261961017519,
+          -718432.0764427955
+        ],
+        [
+          0.0,
+          2829.486508,
+          1211.824050469792,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "focal_lengths": {
+        "fx": 2829.486508,
+        "fy": 2829.486508
+      },
+      "principal_points": {
+        "cx": 1332.4261961017519,
+        "cy": 1211.824050469792
+      },
+      "baseline": 253.9089952935006
+    },
+    "q_matrix": {
+      "Q": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1332.4261961017519
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -1211.824050469792
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          2829.486508
+        ],
+        [
+          0.0,
+          0.0,
+          0.0039384189553586775,
+          0.0
+        ]
+      ],
+      "parameters": {
+        "cx": 1332.4261961017519,
+        "cy": 1211.824050469792,
+        "fx": 2829.486508,
+        "baseline_inv": 0.0039384189553586775
+      }
+    },
+    "consistency_check": {
+      "consistent": true,
+      "warnings": [],
+      "errors": [],
+      "metrics": {
+        "focal_length_diff": 0.0,
+        "principal_point_diff": [
+          0.0,
+          0.0
+        ],
+        "baseline_diff": 0.0,
+        "baseline_ratio": 0.0
+      }
+    }
+  },
+  "points_info": {
+    "num_interpolated_points": 1613,
+    "endpoints": {
+      "left": [
+        943,
+        1500
+      ],
+      "right": [
+        2588,
+        1542
+      ]
+    }
+  },
+  "configuration": {
+    "rectified_image_size_mode": "auto",
+    "rectification_alpha": -1,
+    "resize_config": {
+      "resize_target_width": null,
+      "resize_target_height": null,
+      "resize_scale": 1,
+      "resize_max_pixels": 8294400
+    }
+  }
+}

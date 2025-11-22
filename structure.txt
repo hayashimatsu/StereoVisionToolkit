@@ -1,0 +1,43 @@
+StereoVisionToolkit/
+├── main.py                          # Entry point, orchestrates pipeline
+├── config/
+│   ├── config.py                    # Configuration loader and validator
+│   ├── config_rut_shape.json        # Main configuration file
+│   └── config_rut_shape1.json       # Alternative configuration
+├── src_rut_shape/                   # Core processing modules
+│   ├── rut_shape.py                 # Pipeline orchestrator
+│   ├── rectify_refactored.py        # Stage 1: Rectification
+│   ├── disparity_refactored.py      # Stage 2: Disparity calculation
+│   ├── depth.py                     # Stage 3: Depth reconstruction
+│   ├── height_refactored.py         # Stage 4: Rut shape extraction
+│   ├── base/                        # Base classes
+│   │   ├── file_manager.py          # File I/O operations
+│   │   └── processor.py             # Processing pipeline template
+│   ├── rectification/               # Rectification sub-modules
+│   │   ├── engine.py                # Stereo rectification engine
+│   │   ├── matrix_calculator.py     # Q matrix calculations
+│   │   └── file_manager.py          # Rectification file operations
+│   ├── disparity/                   # Disparity sub-modules
+│   │   ├── sgbm_engine.py           # SGBM algorithm wrapper
+│   │   ├── parameter_calculator.py  # Auto-parameter tuning
+│   │   └── disparity_processor.py   # Disparity processing
+│   └── height/                      # Height sub-modules
+│       ├── processors.py            # Rut shape processing
+│       ├── rut_calculator.py        # Rut depth calculation
+│       ├── image_loader.py          # Image and data loading
+│       ├── coordinate_processor.py  # Coordinate transformations
+│       └── file_manager.py          # Height file operations
+├── utils/                           # Utility modules
+│   ├── point_processor.py           # Point transformation utilities
+│   ├── image_processing.py          # Image manipulation
+│   ├── low_pass_filter.py           # Signal filtering
+│   ├── data_scaling.py              # Coordinate scaling
+│   ├── rut_visualization.py         # Rut depth plotting
+│   ├── visualizer.py                # General visualization
+│   ├── stereo_math.py               # Stereo geometry calculations
+│   ├── file_operations.py           # File I/O helpers
+│   └── logger_config.py             # Logging configuration
+└── document/                        # Documentation
+    ├── README.md                    # User guide
+    ├── PROJECT_DEEP_DIVE.md         # This document
+    └── TECHNOLOGY_TRANSFER.md       # Implementation guide
