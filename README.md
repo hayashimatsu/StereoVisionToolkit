@@ -3,31 +3,6 @@
 A complete stereo-vision processing pipeline for **millimeter-level rut depth estimation** using smartphone stereo images or any calibrated stereo camera pair.
 This project includes a fully modular architecture, robust rectification for **non-synchronized stereo cameras**, accurate 3D reconstruction, and multi-stage rut-shape extraction.
 
-
-
-# 🖼️ Example Input/Output
-
-### **Input Images**
-
-|                                 Left camera                                 |                                 Right camera                                |
-| :-------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
-| ![Left](document/image_demo/left_001.jpg) | ![Right](document/image_demo/right_001.jpg) |
-
-
-
-### **Rectified Output**
-
-(Automatically corrected to avoid cropping and preserve full FOV)
-
-![Rectified](document/image_demo/rectified_marked_001.jpg)
-
----
-
-### **Final Rut Depth Result**
-
-![Rut Profile](document/image_demo/rut_depth_analysis_001.png)
-
-
 # 🚀 Overview
 
 This toolkit implements an end-to-end geometric vision pipeline:
@@ -43,6 +18,36 @@ The system is designed to be:
 * Engineering-accurate
 * Modular and extensible
 * Suitable for research, road-inspection prototyping, or 3D reconstruction tasks
+
+---
+
+# 🖼️ Example Input/Output
+
+### **Input Images**
+> ⚠️ Note  
+> The photo includes a 1/60‑second time lag: the right frame is captured slightly later than the left.
+
+|                                 Left camera                                 |                                 Right camera                                |
+| :-------------------------------------------------------------------------: | :-------------------------------------------------------------------------: |
+| ![Left](document/image_demo/left_001.jpg) | ![Right](document/image_demo/right_001.jpg) |
+
+
+
+### **Rectified Output**
+> 💡 Tip  
+> Use a yellow line to indicate the section selected for rut‑shape calculation.
+
+![Rectified](document/image_demo/rectified_marked_001.jpg)
+
+
+### **Final Rut Depth Result**
+
+![Rut Profile](document/image_demo/rut_depth_analysis_001.png)
+
+> 📊 Comparison  
+> The result is compared with the LiDAR data. Notice that the bottom position is almost aligned.
+
+![Rut Profile](document/answer/graph.jpg)
 
 ---
 
