@@ -1,0 +1,10 @@
+# Computer Vision and Image Processing
+opencv-python~=4.0.1
+numpy>=1.16.0,<2.0.0
+matplotlib>=3.0.0
+
+# Scientific Computing
+scipy>=1.2.0
+
+# Utilities
+Pillow>=6.0.0

@@ -259,7 +259,22 @@ Here is the input example:
 
 # ▶ How to Run
 
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd StereoVisionToolkit
 ```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Execution
+
+```bash
 python main.py --config config/config_rut_shape.json
 ```
 All required parameters are defined in the JSON file.
@@ -286,5 +301,19 @@ Outputs:
 * Stereo depth estimation research
 * Smartphone-based 3D measurement
 * Geometry-based computer vision experimentation
+
+---
+
+# 📦 Requirements
+
+The project requires the following Python packages:
+
+- **opencv-python** ~=4.0.1 - Computer vision and image processing
+- **numpy** >=1.16.0,<2.0.0 - Numerical computing
+- **matplotlib** >=3.0.0 - Data visualization and plotting
+- **scipy** >=1.2.0 - Scientific computing and signal processing
+- **Pillow** >=6.0.0 - Image file handling
+
+See `requirements.txt` for the complete list of dependencies.
 
 ---
