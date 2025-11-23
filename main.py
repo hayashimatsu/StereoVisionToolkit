@@ -34,7 +34,7 @@ def main() -> None:
     Main function to execute the rut shape analysis pipeline.
     """ 
     # Choose the appropriate configuration file
-    config_file = "config/config_rut_shape1.json"
+    config_file = "config/config_rut_shape.json"
     # config_file = "con1fig/config_rut_shape_exam.json"
     
     config = load_config(config_file)

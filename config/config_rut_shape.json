@@ -9,10 +9,9 @@
   "save_path_temp"    : "$temp",
   
   "low_pass_filter_cutoff": 2,
-  "lane_width": 3.5,
+  "lane_width": 3.2,
   "reference_rut_shape": "None",
-  "ref_L": 5,
-  "ref_R": 5,
+
   
   "need_showPicture": "False",
 
@@ -30,7 +29,9 @@
   "focus_range_x": 500,
   "focus_range_y": 1250,
   
-  "_comment_for_RutShape": "The following are parameters used for automatic rut extraction.",
+  "_comment_for_rotate": "The following are parameters used for automatic rut extraction.",
+  "need_rotating_ground_level": "True",
+  "need_adjusting_ground_level": "True",
   "lane_marker_range_L": 70,
   "lane_marker_range_R": 70,
   
@@ -38,6 +39,7 @@
   "need_fix_extreme_value": "True",
   "block_size_factor": 0.2,
   "min_block_size": 25,
+  "allowed_step_y_max":60,
 
   
   "_comment_for_improved_rut_calc": "Parameters for improved rut depth calculation.",
