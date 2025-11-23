@@ -138,6 +138,10 @@ result/
 !config/*.json
 !parameter/**/*.json
 
+# Old/archived code folders
+old/
+**/old/
+
 # Temporary files
 *.tmp
 *.bak
