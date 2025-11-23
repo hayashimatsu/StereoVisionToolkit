@@ -179,8 +179,7 @@ StereoVisionToolkit/
 
 ├── config/
 │   ├── config.py                    # Configuration loader and validator
-│   ├── config_rut_shape.json        # Main rut shape configuration
-│   └── config_rut_shape1.json       # Alternative configuration
+│   └── config_rut_shape.json        # Main configuration file (customizable, specify path via --config in terminal)
 ├── src_rut_shape/
 │   ├── rut_shape.py                 # High-level rut extraction pipeline
 │   ├── rectify_refactored.py        # Stage 1: Stereo rectification (improved)
