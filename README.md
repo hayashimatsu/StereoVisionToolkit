@@ -312,7 +312,6 @@ The project requires the following Python packages:
 - **numpy** >=1.16.0,<2.0.0 - Numerical computing
 - **matplotlib** >=3.0.0 - Data visualization and plotting
 - **scipy** >=1.2.0 - Scientific computing and signal processing
-- **Pillow** >=6.0.0 - Image file handling
 
 See `requirements.txt` for the complete list of dependencies.
 
